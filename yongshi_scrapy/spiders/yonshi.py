@@ -22,7 +22,7 @@ class YonshiSpider(scrapy.Spider):
         if self.offset < 118050:
             self.offset += 50
             url = self.baseurl + str(self.offset)
-            scrapy.Request(url, callback=self.parse, dont_filter=True)
+            yield scrapy.Request(url, callback=self.parse, dont_filter=True)
 
 
 
